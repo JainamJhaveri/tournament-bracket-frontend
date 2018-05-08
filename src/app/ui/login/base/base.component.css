@@ -1,0 +1,25 @@
+mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+mat-form-field {
+    margin-bottom: 5px;
+}
+
+.signin-content {
+    padding: 60px;
+}
+
+.full-width-input {
+    width: 100%;
+}
+
+button {
+    margin-top: 5px;
+}
+
+.loading-container {
+    margin-top: 10px;
+}

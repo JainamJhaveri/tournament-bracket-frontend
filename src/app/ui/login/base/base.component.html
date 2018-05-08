@@ -1,0 +1,65 @@
+<div class="signin-content">
+    <mat-card>
+        <mat-card-content>
+
+            <form (ngSubmit)="login()" [formGroup]="loginForm">
+
+                <p>Please login to continue</p>
+
+                <!-- email -->
+                <mat-form-field class="full-width-input">
+                    <input matInput placeholder="Email" name="inputUsername"
+                           [formControl]="emailFormControl"
+                           [(ngModel)]="user.email"
+                           [errorStateMatcher]="matcher"
+                           required>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        {{msgEmailRequired}}
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        {{msgEmailValid}}
+                    </mat-error>
+                </mat-form-field>
+
+
+                <!-- password -->
+                <mat-form-field class="full-width-input">
+                    <input matInput type="password" placeholder="Password" name="inputPassword"
+                           [formControl]="passwordFormControl"
+                           [errorStateMatcher]="matcher"
+                           [(ngModel)]="user.password"
+                           [maxlength]="passwordMaxLength"
+                           [minlength]="passwordMinLength"
+                           required>
+                    <!-- password hint -->
+                    <mat-hint *ngIf="passwordFormControl.pristine">
+                        {{msgPasswordLength}}
+                    </mat-hint>
+                    <mat-error *ngIf="passwordFormControl.hasError('required')">
+                        {{msgPasswordRequired}}
+                    </mat-error>
+                    <mat-error *ngIf="(passwordFormControl.hasError('maxlength') ||
+                                        passwordFormControl.hasError('minlength'))
+                                    && !passwordFormControl.hasError('required')">
+                        {{msgPasswordLength}}
+                    </mat-error>
+                </mat-form-field>
+
+
+                <!-- login button -->
+                <button mat-raised-button [disabled]="loading" color="primary" type="submit">
+                    Login
+                </button>
+
+                <!-- spinner -->
+                <div class="loading-container" align="center" [hidden]="!loading">
+                    <mat-progress-spinner [diameter]="50" [strokeWidth]="3"
+                                          color="accent" mode="indeterminate">
+                    </mat-progress-spinner>
+                </div>
+
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+</div>

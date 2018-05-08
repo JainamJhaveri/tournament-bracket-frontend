@@ -8,6 +8,7 @@
 
 # dependencies
 /node_modules
+/package-lock.json
 
 # IDEs and editors
 /.idea
@@ -31,7 +32,6 @@
 /coverage
 /libpeerconnection.log
 npm-debug.log
-yarn-error.log
 testem.log
 /typings
 
@@ -40,5 +40,6 @@ testem.log
 /e2e/*.map
 
 # System Files
-.DS_Store
 Thumbs.db
+
+/*.log
