@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {NotFoundComponent} from './utils/not-found/not-found.component';
-import {AuthGuard} from './guards/auth.guard';
+import {DashboardComponent} from "./ui/dashboard/dashboard.component";
 
 const routes: Routes = [
     // {
@@ -12,6 +12,10 @@ const routes: Routes = [
     {
         path: 'login',
         loadChildren: './ui/login/login.module#LoginModule'
+    },
+    {
+        path: '',
+        component: DashboardComponent
     },
     {
         path: '**',
