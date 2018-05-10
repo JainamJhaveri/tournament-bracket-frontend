@@ -11,3 +11,7 @@
 .div-round {
     border-bottom: 1px solid grey;
 }
+
+.highlightMe {
+    font-weight: bold;
+}

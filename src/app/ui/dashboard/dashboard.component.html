@@ -2,15 +2,15 @@
 <div fxLayout="row" fxLayoutAlign="space-around start">
 
     <div *ngFor="let round of tournament.rounds">
-        <p class="div-round" >Round - {{round.roundNo}}</p>
+        <p class="div-round">Round - {{round.roundNo}}</p>
 
         <div fxLayout="column" fxLayoutAlign="space-around start">
             <div *ngFor="let pairing of round.pairings">
-                <p>
+                <p [class.highlightMe]="pairing.participant1.participantId == participantToHighlight.participantId">
                     {{pairing.participant1.participantNo}}. {{pairing.participant1.firstName}}
                     {{pairing.participant1.lastName}}
                 </p>
-                <p>
+                <p [class.highlightMe]="pairing.participant2.participantId == participantToHighlight.participantId">
                     {{pairing.participant2.participantNo}}. {{pairing.participant2.firstName}}
                     {{pairing.participant2.lastName}}
                 </p>
