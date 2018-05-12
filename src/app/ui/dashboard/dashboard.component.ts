@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {sampleTournament} from "../../models/dashboard/sample-1-round";
-import {Participant} from "../../models/dashboard/Round";
+import {Participant, Round} from "../../models/dashboard/Round";
 
 @Component({
     selector: 'app-dashboard',
@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
 
     tournament = sampleTournament;
     participantToHighlight: Participant;
+    roundToHighlight: Round;
 
     constructor() {
 
@@ -20,7 +21,24 @@ export class DashboardComponent implements OnInit {
         console.log(this.tournament);
     }
 
-    highlight(participant: Participant) {
-        this.participantToHighlight = participant;
+    highlightParticipant(participant: Participant) {
+        if (this.participantToHighlight != null &&
+            this.participantToHighlight.participantId == participant.participantId) {
+            this.participantToHighlight = null
+        }
+        else {
+            this.participantToHighlight = participant;
+        }
+    }
+
+
+    highlightRound(round: Round) {
+        if (this.roundToHighlight != null &&
+            this.roundToHighlight.roundId == round.roundId) {
+            this.roundToHighlight = null
+        }
+        else {
+            this.roundToHighlight = round;
+        }
     }
 }

@@ -8,14 +8,18 @@
     right: 0;
 }
 
-.highlight-me {
+.highlight-participant {
     font-weight: bold;
     background: #abffba !important;
 }
 
+.highlight-round {
+    background-color: cornsilk;
+}
+
 .participant {
     padding: 5px 5px;
-    margin: 3px 3px 0;
+    margin: 3px 10px 0;
     height: 20px;
     line-height: 25px;
     white-space: nowrap;
@@ -23,6 +27,10 @@
     position: relative;
     border: 1px solid black;
     background: whitesmoke;
+}
+
+.participant:hover {
+    cursor: pointer;
 }
 
 .matchup {
@@ -34,7 +42,7 @@
     transition: all 0.2s;
 }
 
-.round-details {
+.round-title {
     color: #2c7399;
     text-transform: uppercase;
     text-align: center;
@@ -43,7 +51,19 @@
     margin-top: 10px;
 }
 
+.champion {
+    margin-top: 20px;
+}
+
 .round {
     width: 100%;
     height: 100%;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
 }

@@ -24,7 +24,7 @@ export class Pairing {
 
 export class Round {
     constructor(public roundId: string,
-                public roundNo: number,
+                public roundName: string,
                 public pairings: Pairing[]) {
     }
 }

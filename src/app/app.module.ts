@@ -13,6 +13,7 @@ import {NotFoundComponent} from "./utils/not-found/not-found.component";
 import {HttpErrorHandler} from "./http-error-handler";
 import {AppRoutingModule} from "./app-routing.module";
 import {DashboardComponent} from './ui/dashboard/dashboard.component';
+import { MyMatchHeightDirective } from './utils/my-match-height.directive';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {DashboardComponent} from './ui/dashboard/dashboard.component';
         AppComponent,
         NotFoundComponent,
         DashboardComponent,
+        MyMatchHeightDirective,
     ],
     imports: [
         BrowserAnimationsModule,

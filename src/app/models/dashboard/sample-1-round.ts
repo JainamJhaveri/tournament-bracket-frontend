@@ -18,11 +18,11 @@ const r5Participants: Participant[] = r4Pairings.map(x => x.p1);
 const r5Pairings = getPairings(r5Participants);
 
 
-const round1 = new Round('roundId-1', 1, r1Pairings);
-const round2 = new Round('roundId-2', 2, r2Pairings);
-const round3 = new Round('roundId-3', 3, r3Pairings);
-const round4 = new Round('roundId-4', 4, r4Pairings);
-const round5 = new Round('roundId-5', 5, r5Pairings);
+const round1 = new Round('roundId-1', "Round 1", r1Pairings);
+const round2 = new Round('roundId-2', "Round 2", r2Pairings);
+const round3 = new Round('roundId-3', "Semi-Finals", r3Pairings);
+const round4 = new Round('roundId-4', "Finals !", r4Pairings);
+const round5 = new Round('roundId-5', "Champion !!!", r5Pairings);
 const sampleRounds = [round1, round2, round3, round4, round5];
 
 export const sampleTournament = new Tournament('tournamentId-1', 'Tournament 1',
