@@ -15,8 +15,8 @@ export class Participant {
 
 export class Pairing {
     constructor(public pairingId: string,
-                public participant1: Participant,
-                public participant2: Participant,
+                public p1: Participant,
+                public p2: Participant,
                 public pairingStatus: PairingStatus = PairingStatus.NOT_STARTED) {
 
     }

@@ -1,19 +1,17 @@
 import {Pairing, Participant, Round, Tournament} from './Round';
 
-const sampleParticipants: Participant[] = [];
-for (let i = 0; i < 16; i++) {
-    sampleParticipants.push(new Participant('pid-' + i, (i + 1), 'A' + i, 'B' + i));
+const participants: Participant[] = [];
+for (const i = 0; i < 16; i++) {
+    participants.push(new Participant('pid-' + i, (i + 1), 'A' + i, 'B' + i));
 }
 
-const r1Pairings: Pairing[] = [];
-for (let i = 0; i < 8; i++) {
-    r1Pairings.push(
-        new Pairing('pairId-' + i,
-            sampleParticipants[i * 2], sampleParticipants[i * 2 + 1]));
-}
-const r2Pairings = r1Pairings.filter((x, index) => index % 2 == 0);
-const r3Pairings = r2Pairings.filter((x, index) => index % 2 == 0);
-const r4Pairings = r3Pairings.filter((x, index) => index % 2 == 0);
+const r1Pairings: Pairing[] = getPairings(participants);
+const r2Participants: Participant[] = r1Pairings.map(x => x.p1);
+const r2Pairings: Pairing[] = getPairings(r2Participants);
+const r3Participants: Participant[] = r2Pairings.map(x => x.p1);
+const r3Pairings: Pairing[] = getPairings(r3Participants);
+const r4Participants: Participant[] = r3Pairings.map(x => x.p1);
+const r4Pairings = getPairings(r4Participants);
 
 
 const round1 = new Round('roundId-1', 1, r1Pairings);
@@ -23,4 +21,22 @@ const round4 = new Round('roundId-4', 4, r4Pairings);
 const sampleRounds = [round1, round2, round3, round4];
 
 export const sampleTournament = new Tournament('tournamentId-1', 'Tournament 1',
-    '01/01/2001', '01/01/2001', sampleRounds);
+    '01/01/2001', '11/01/2001', sampleRounds);
+
+
+function getPairings(participants: Participant[]) {
+    const pairings: Pairing[] = [];
+    for (const i = 0; i < participants.length / 2; i++) {
+        const p1 = participants[i * 2];
+        const p2 = participants[i * 2 + 1];
+        pairings.push(new Pairing('pairId-' + randomIntFrom(1, 1000), p1, p2));
+    }
+    console.log(pairings);
+    return pairings;
+}
+
+
+function randomIntFrom(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
