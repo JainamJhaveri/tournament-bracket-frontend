@@ -1,8 +1,10 @@
 import {Pairing, Participant, Round, Tournament} from './Round';
 
+import * as random from "random-name";
+
 const participants: Participant[] = [];
-for (const i = 0; i < 16; i++) {
-    participants.push(new Participant('pid-' + i, (i + 1), 'A' + i, 'B' + i));
+for (let i = 0; i < 16; i++) {
+    participants.push(new Participant('pid-' + i, (i + 1), random.first(), random.last()));
 }
 
 const r1Pairings: Pairing[] = getPairings(participants);
@@ -12,13 +14,16 @@ const r3Participants: Participant[] = r2Pairings.map(x => x.p1);
 const r3Pairings: Pairing[] = getPairings(r3Participants);
 const r4Participants: Participant[] = r3Pairings.map(x => x.p1);
 const r4Pairings = getPairings(r4Participants);
+const r5Participants: Participant[] = r4Pairings.map(x => x.p1);
+const r5Pairings = getPairings(r5Participants);
 
 
 const round1 = new Round('roundId-1', 1, r1Pairings);
 const round2 = new Round('roundId-2', 2, r2Pairings);
 const round3 = new Round('roundId-3', 3, r3Pairings);
 const round4 = new Round('roundId-4', 4, r4Pairings);
-const sampleRounds = [round1, round2, round3, round4];
+const round5 = new Round('roundId-5', 5, r5Pairings);
+const sampleRounds = [round1, round2, round3, round4, round5];
 
 export const sampleTournament = new Tournament('tournamentId-1', 'Tournament 1',
     '01/01/2001', '11/01/2001', sampleRounds);
@@ -26,7 +31,7 @@ export const sampleTournament = new Tournament('tournamentId-1', 'Tournament 1',
 
 function getPairings(participants: Participant[]) {
     const pairings: Pairing[] = [];
-    for (const i = 0; i < participants.length / 2; i++) {
+    for (let i = 0; i < participants.length / 2; i++) {
         const p1 = participants[i * 2];
         const p2 = participants[i * 2 + 1];
         pairings.push(new Pairing('pairId-' + randomIntFrom(1, 1000), p1, p2));

@@ -1,26 +1,29 @@
 <!--<mat-toolbar color="primary" class="mat-elevation-z6">{{tournament.name}}</mat-toolbar>-->
-<div fxLayout="row" fxLayoutAlign="space-around start">
 
-    <div *ngFor="let round of tournament.rounds" class="round round-one current">
-        <div class="round-details">Round {{round.roundNo}}</div>
+<div class="container">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around start">
 
-        <div fxLayout="column" fxLayoutAlign="space-around start">
+        <div *ngFor="let round of tournament.rounds" class="round"
+             fxLayout="column" fxLayoutAlign="center center">
+
+            <div class="round-details">Round {{round.roundNo}}</div>
+
             <ul *ngFor="let pairing of round.pairings" class="matchup">
-                <li class="team team-top"
-                    [class.highlightMe]="pairing.p1.participantId === participantToHighlight?.participantId"
+                <li class="participant"
+                    [class.highlight-me]="pairing.p1.participantId === participantToHighlight?.participantId"
                     (click)="highlight(pairing.p1)">
                     {{pairing.p1.participantNo}}. {{pairing.p1.firstName}}
                     {{pairing.p1.lastName}}
                 </li>
-                <li class="team team-bottom"
-                    [class.highlightMe]="pairing.p2.participantId === participantToHighlight?.participantId"
+                <li class="participant" *ngIf="pairing.p2"
+                    [class.highlight-me]="pairing.p2.participantId === participantToHighlight?.participantId"
                     (click)="highlight(pairing.p2)">
                     {{pairing.p2.participantNo}}. {{pairing.p2.firstName}}
                     {{pairing.p2.lastName}}
                 </li>
             </ul>
+
         </div>
 
     </div>
-
 </div>

@@ -8,31 +8,42 @@
     right: 0;
 }
 
-.div-round {
-    border-bottom: 1px solid grey;
-}
-
-.highlightMe {
+.highlight-me {
     font-weight: bold;
+    background: #abffba !important;
 }
 
-.team {
+.participant {
+    padding: 5px 5px;
+    margin: 3px 3px 0;
+    height: 20px;
+    line-height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+    background: whitesmoke;
 }
 
-.team-top {
-}
-
-.team-bottom {
+.matchup {
+    margin: 0;
+    width: 100%;
+    padding: 10px 0;
+    height: 60px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 .round-details {
+    color: #2c7399;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 40px;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .round {
-}
-
-.round-one {
-}
-
-.current {
+    width: 100%;
+    height: 100%;
 }
