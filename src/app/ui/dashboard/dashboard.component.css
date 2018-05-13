@@ -67,3 +67,13 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
 }
+
+.participant-no {
+    font-size: 11px;
+    text-transform: uppercase;
+    float: right;
+    color: #2c7399;
+    font-weight: bold;
+    position: absolute;
+    right: 5px;
+}

@@ -8,13 +8,13 @@ for (let i = 0; i < 16; i++) {
 }
 
 const r1Pairings: Pairing[] = getPairings(participants);
-const r2Participants: Participant[] = r1Pairings.map(x => x.p1);
+const r2Participants: Participant[] = r1Pairings.map(x => x.p2);
 const r2Pairings: Pairing[] = getPairings(r2Participants);
-const r3Participants: Participant[] = r2Pairings.map(x => x.p1);
+const r3Participants: Participant[] = r2Pairings.map(x => x.p2);
 const r3Pairings: Pairing[] = getPairings(r3Participants);
-const r4Participants: Participant[] = r3Pairings.map(x => x.p1);
+const r4Participants: Participant[] = r3Pairings.map(x => x.p2);
 const r4Pairings = getPairings(r4Participants);
-const r5Participants: Participant[] = r4Pairings.map(x => x.p1);
+const r5Participants: Participant[] = r4Pairings.map(x => x.p2);
 const r5Pairings = getPairings(r5Participants);
 
 

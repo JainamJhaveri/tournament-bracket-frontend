@@ -21,7 +21,8 @@ export class DashboardComponent implements OnInit {
         console.log(this.tournament);
     }
 
-    highlightParticipant(participant: Participant) {
+    highlightParticipant(participant: Participant, event: any) {
+        event.stopPropagation();
         if (this.participantToHighlight != null &&
             this.participantToHighlight.participantId == participant.participantId) {
             this.participantToHighlight = null
@@ -32,7 +33,8 @@ export class DashboardComponent implements OnInit {
     }
 
 
-    highlightRound(round: Round) {
+    highlightRound(round: Round, event: any) {
+        event.stopPropagation();
         if (this.roundToHighlight != null &&
             this.roundToHighlight.roundId == round.roundId) {
             this.roundToHighlight = null

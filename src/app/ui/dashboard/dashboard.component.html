@@ -7,7 +7,7 @@
         <!--round-->
         <div *ngFor="let round of tournament.rounds" class="round"
              [class.highlight-round]="roundToHighlight == round"
-             (click)="highlightRound(round)">
+             (click)="highlightRound(round, $event)">
 
             <!--round title-->
             <div class="round-title noselect">{{round.roundName}}</div>
@@ -21,15 +21,15 @@
                     <li class="participant noselect"
                         [class.champion]="!pairing.p2"
                         [class.highlight-participant]="pairing.p1.participantId === participantToHighlight?.participantId"
-                        (click)="highlightParticipant(pairing.p1);$event.stopPropagation()">
-                        {{pairing.p1.participantNo}}. {{pairing.p1.firstName}}
-                        {{pairing.p1.lastName}}
+                        (click)="highlightParticipant(pairing.p1, $event)">
+                        <span class="participant-no">{{pairing.p1.participantNo}}</span>
+                        {{pairing.p1.firstName}} {{pairing.p1.lastName}}
                     </li>
                     <li class="participant noselect" *ngIf="pairing.p2"
                         [class.highlight-participant]="pairing.p2.participantId === participantToHighlight?.participantId"
-                        (click)="highlightParticipant(pairing.p2);$event.stopPropagation()">
-                        {{pairing.p2.participantNo}}. {{pairing.p2.firstName}}
-                        {{pairing.p2.lastName}}
+                        (click)="highlightParticipant(pairing.p2, $event)">
+                        <span class="participant-no">{{pairing.p2.participantNo}}</span>
+                        {{pairing.p2.firstName}} {{pairing.p2.lastName}}
                     </li>
                 </ul>
 
