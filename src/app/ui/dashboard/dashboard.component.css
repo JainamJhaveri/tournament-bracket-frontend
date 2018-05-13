@@ -76,4 +76,15 @@
     font-weight: bold;
     position: absolute;
     right: 5px;
+    white-space: nowrap;
+    overflow: visible;
+    display: inline-block;
+}
+
+.participant-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 90%; /*just for phone landscape, so that it doesn't overlap)*/
+    display: inline-block;
 }
