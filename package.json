@@ -9,10 +9,10 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "build-staging": "rm -rf dist && ng build -e=staging -prod",
+        "build-staging": "rm -rf dist && ng build -c=staging --prod",
         "test-firebase-staging": "npm run build-staging && firebase serve",
         "deploy-firebase-staging": "npm run build-staging && firebase use staging && firebase deploy",
-        "build-production": "rm -rf dist && ng build -e=prod -prod",
+        "build-production": "rm -rf dist && ng build -c=production --prod",
         "test-firebase-production": "npm run build-production && firebase serve",
         "deploy-firebase-production": "npm run build-production && firebase use production && firebase deploy"
     },
