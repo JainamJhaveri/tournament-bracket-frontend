@@ -12,8 +12,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NotFoundComponent} from "./utils/not-found/not-found.component";
 import {HttpErrorHandler} from "./http-error-handler";
 import {AppRoutingModule} from "./app-routing.module";
-import {DashboardComponent} from './ui/dashboard/dashboard.component';
-import { MyMatchHeightDirective } from './utils/my-match-height.directive';
+import {DashboardComponent} from './ui/viewers/dashboard/dashboard.component';
+import {MyMatchHeightDirective} from './utils/my-match-height.directive';
 
 
 @NgModule({

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {sampleTournament} from "../../models/dashboard/sample-1-round";
-import {Participant, Round} from "../../models/dashboard/Round";
+import {sampleTournament} from "../../../models/dashboard/sample-1-round";
+import {Participant, Round} from "../../../models/dashboard/Round";
 
 @Component({
     selector: 'app-dashboard',
