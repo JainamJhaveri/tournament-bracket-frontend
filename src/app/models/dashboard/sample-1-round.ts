@@ -1,10 +1,9 @@
 import {Pairing, Participant, Round, Tournament} from './Round';
 
-import * as random from "random-name";
 
 const participants: Participant[] = [];
 for (let i = 0; i < 16; i++) {
-    participants.push(new Participant('pid-' + i, (i + 1), random.first(), random.last()));
+    participants.push(new Participant('pid-' + i, (i + 1), "A-" + i + 1, "B-" + i + 1));
 }
 
 const r1Pairings: Pairing[] = getPairings(participants);

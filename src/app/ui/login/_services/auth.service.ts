@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {HandleError, HttpErrorHandler} from '../../../http-error-handler';
 import {catchError, map} from 'rxjs/operators';
 import {GeneralResponse} from '../../../models/GeneralResponse';
