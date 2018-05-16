@@ -22,13 +22,13 @@
                         [class.champion]="!pairing.p2"
                         [class.highlight-participant]="pairing.p1.participantId === participantToHighlight?.participantId"
                         (click)="highlightParticipant(pairing.p1, $event)">
-                        <span class="participant-name"> {{pairing.p1.firstName}} {{pairing.p1.lastName}}</span>
+                        <span class="participant-name"> {{pairing.p1.name}}</span>
                         <span class="participant-no">{{pairing.p1.participantNo}}</span>
                     </li>
                     <li class="participant noselect" *ngIf="pairing.p2"
                         [class.highlight-participant]="pairing.p2.participantId === participantToHighlight?.participantId"
                         (click)="highlightParticipant(pairing.p2, $event)">
-                        <span class="participant-name">{{pairing.p2.firstName}} {{pairing.p2.lastName}}</span>
+                        <span class="participant-name">{{pairing.p2.name}}</span>
                         <span class="participant-no">{{pairing.p2.participantNo}}</span>
                     </li>
                 </ul>

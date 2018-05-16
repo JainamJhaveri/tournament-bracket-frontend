@@ -8,8 +8,7 @@ export enum PairingStatus {
 export class Participant {
     constructor(public participantId: string,
                 public participantNo: number,
-                public firstName: string,
-                public lastName: string) {
+                public name: string) {
     }
 }
 

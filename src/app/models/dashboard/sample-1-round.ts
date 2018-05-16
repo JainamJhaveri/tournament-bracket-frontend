@@ -1,9 +1,10 @@
+import * as faker from "faker";
 import {Pairing, Participant, Round, Tournament} from './Round';
 
 
 const participants: Participant[] = [];
 for (let i = 0; i < 16; i++) {
-    participants.push(new Participant('pid-' + i, (i + 1), "A-" + i + 1, "B-" + i + 1));
+    participants.push(new Participant('pid-' + i, (i + 1), `${faker.name.firstName()} ${faker.name.lastName()}`));
 }
 
 const r1Pairings: Pairing[] = getPairings(participants);
